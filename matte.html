@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>fwb9visual | matte painting</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/css/swiper.min.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
+
+</head>
+<body>
+<div class="header" id="header">
+    <div class="mobileHeader">
+        <div class="logo">
+            <img src="images/logo.png" alt="Logo">
+        </div>
+        <div id="hamburger" class="hamburglar is-closed">
+
+            <div class="burger-icon">
+                <div class="burger-container">
+                    <span class="burger-bun-top"></span>
+                    <span class="burger-filling"></span>
+                    <span class="burger-bun-bot"></span>
+                </div>
+            </div>
+
+            <!-- svg ring containter -->
+            <div class="burger-ring">
+                <svg class="svg-ring">
+                    <path class="path" fill="none" stroke="#8b8b8b" stroke-miterlimit="10" stroke-width="4" d="M 34 2 C 16.3 2 2 16.3 2 34 s 14.3 32 32 32 s 32 -14.3 32 -32 S 51.7 2 34 2" />
+                </svg>
+            </div>
+            <!-- the masked path that animates the fill to the ring -->
+
+            <svg width="0" height="0">
+                <mask id="mask">
+                    <path xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#ff0000" stroke-miterlimit="10" stroke-width="4" d="M 34 2 c 11.6 0 21.8 6.2 27.4 15.5 c 2.9 4.8 5 16.5 -9.4 16.5 h -4" />
+                </mask>
+            </svg>
+            <div class="path-burger">
+                <div class="animate-path">
+                    <div class="path-rotation"></div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <ul  class="menu mattePage">
+        <li>
+            <a href="index.html">Home</a>
+        </li>
+        <li>
+            <a href="#">Services</a>
+        </li>
+        <li>
+            <a href="#">About&Contact</a>
+        </li>
+    </ul>
+</div>
+<div class="enterBlock mattePage">
+    <a href="#" class="descriptionLink" data-scroll="works"></a>
+</div>
+<span class="worksTitle">
+        Matte Painting
+    </span>
+<div class="works" id="works">
+    <div>
+        <div
+                class="workItem"
+                data-category="matte"
+                data-number="1"
+                data-quantity="1"
+        >
+            <img src="images/matte/preview/1.jpg" alt="Picture Boat In The Fog">
+            <div class="description">
+                <span>Picture Boat In The Fog</span>
+            </div>
+        </div>
+        <div
+                class="workItem"
+                data-category="matte"
+                data-number="2"
+                data-quantity="1"
+        >
+            <img src="images/matte/preview/2.jpg" alt="Picture House Near The River">
+            <div class="description">
+                <span>Picture House Near The River</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="footer">
+    <a href="#" class="backToTop" data-scroll="header">
+        <img src="images/up-arrow.png" alt="" data-scroll="header">
+        <span data-scroll="header">BACK TO TOP</span>
+    </a>
+    <div class="socialIcons">
+        <a href="https://www.instagram.com/rusl_rasl/" class="instagram" target="_blank"></a>
+        <a href="https://www.behance.net/newxdesignbbe2" class="behance" target="_blank"></a>
+        <a href="https://www.facebook.com/profile.php?id=100024107910830" class="facebook" target="_blank"></a>
+    </div>
+    <div class="contacts">
+        <a href="mailto:info@feb9visual.com">info@feb9visual.com</a>
+        <a href="tel:+375447958847">+375447958847</a>
+    </div>
+    <div class="copyRight">
+        2019 feb9visual
+    </div>
+</div>
+<div class="sliderPopUp hidden" id="sliderPopUp">
+    <div class="swiper-container" id="swiperContainer">
+        <!-- Additional required wrapper -->
+        <div class="swiper-wrapper">
+            <!-- Slides -->
+        </div>
+        <div class="swiper-pagination "></div>
+        <!-- If we need navigation buttons -->
+        <div class="swiper-button-prev swiper-button-white"></div>
+        <div class="swiper-button-next swiper-button-white"></div>
+    </div>
+    <div class="closeBtn">
+        <img src="images/close-button.png" alt="">
+    </div>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/js/swiper.min.js"></script>
+<script src="script.js" type="text/javascript"></script>
+</body>
+</html>

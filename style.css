@@ -1,0 +1,802 @@
+@import url('https://fonts.googleapis.com/css?family=Nunito+Sans:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i');
+@import url('https://fonts.googleapis.com/css?family=Alegreya+Sans:100,100i,300,300i,400,400i,500,500i,700,700i,800,800i,900,900i&subset=cyrillic');
+/*font-family: 'Alegreya Sans', sans-serif;*/
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+body {
+    line-height: 1;
+}
+ol, ul {
+    list-style: none;
+}
+blockquote, q {
+    quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: '';
+    content: none;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+*, *:before, *:after {
+    box-sizing: border-box;
+}
+
+/*Site css starts here*/
+body {
+    font-family: 'Nunito Sans', sans-serif;
+}
+.header {
+    display: flex;
+    justify-content: space-between;
+    position: fixed;
+    padding: 0 50px;
+    width: 100%;
+    box-sizing: border-box;
+    transition: 0.4s;
+    z-index: 2;
+    align-items: center;
+}
+
+.header.scrolled {
+    background: rgba(0, 0, 0, 0.6) ;
+}
+
+.header .logo {
+    padding: 10px 0;
+    width: 50px;
+    height: 95px;
+    overflow: hidden;
+}
+.header .mobileHeader {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+}
+.header .logo img {
+    height: 100%;
+}
+
+.header.scrolled .logo img, .header.interiorsPage .logo img {
+    transform: translateX(-50px);
+}
+
+.header .menu {
+    display: flex;
+    padding: 20px 0;
+}
+
+.header .menu li {
+    margin-left: 20px;
+    height: 100%;
+}
+
+.header .menu li a {
+    text-decoration: none;
+    color: #8b8b8b;
+    height: 100%;
+    display: flex;
+    text-transform: uppercase;
+    align-items: center;
+    transition: 0.3s;
+}
+
+.header .menu.mattePage li a {
+    color: white;
+}
+
+.header .menu li a:hover, .header .menu li a.active {
+    color: #ffffff;
+}
+
+@keyframes move {
+    from {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(7px);
+    }
+    to {
+        transform: translateY(0);
+    }
+}
+
+.enterBlock {
+    height: 100vh;
+    width: 100%;
+    background: url("images/headerBackground.jpg") 70% 100%;
+    background-size: cover;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    padding: 10px 20px;
+    box-sizing: border-box;
+}
+
+.enterBlock.architecturePage {
+    background: url("images/architectureHeaderBackground.jpg") 70% 90%;
+    background-size: cover;
+
+}
+
+.enterBlock.interiorsPage {
+    background: url("images/interiorsBackground.jpg") 40% 90%;
+    background-size: cover;
+
+}
+
+.enterBlock.mattePage {
+    background: url("images/mattePageBackground.jpg") 60% 90%;
+    background-size: cover;
+
+}
+
+.enterBlock .descriptionLink {
+    width: 64px;
+    height: 64px;
+    background: url("images/downArrow.png") no-repeat center;
+    animation: move 1s infinite;
+}
+
+.blackContainer {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 50px 30px;
+    background: #000000;
+    color: #ffffff
+}
+
+.blackContainer .title, .blackContainer .description {
+    display: inline-block;
+    max-width: 500px;
+    text-align: center;
+}
+
+.blackContainer .title {
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+.blackContainer .description {
+    font-size: 14px;
+    margin-top: 20px;
+}
+
+.blackContainer .divider {
+    width: 130px;
+    height: 0;
+    border-bottom: 1px solid white;
+    margin-bottom: 3px;
+}
+
+.categoryMenu {
+    display: flex;
+    padding: 40px;
+    background: black;
+}
+
+
+
+.categoryMenu img {
+    width: 100%;
+    height: 100%;
+}
+
+.categoryMenu .categoryLink {
+    margin-right: 10px;
+    position: relative;
+}
+
+.categoryMenu .categoryLink:hover > .description{
+    opacity: 1;
+}
+.categoryMenu .categoryLink:last-child {
+    margin-right: 0;
+}
+
+
+.categoryMenu .description {
+    position: absolute;
+    opacity: 0;
+    background: rgba(0, 0, 0, 0.5);
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    align-items: flex-end;
+    padding: 15px 30px;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.categoryMenu .description span {
+    font-size: 18px;
+    color: white;
+}
+
+
+
+.hamburglar {
+    transform: scale(1);
+    cursor: pointer;
+    position: relative;
+    display: none;
+    width: 68px;
+    height: 68px;
+    background: transparent;
+    -webkit-touch-callout: none;
+    user-select: none;
+}
+
+   .path-burger {
+       position: absolute;
+       top: 0;
+       left: 0;
+       height: 68px;
+       width: 68px;
+   mask: url(#mask);
+       -webkit-mask-box-image: url(https://raygun.io/upload/mask.svg);
+   }
+
+.animate-path {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 68px;
+    height: 68px;
+}
+
+.path-rotation {
+       height: 34px;
+       width: 34px;
+       margin: 34px 34px 0 0;
+       transform: rotate(0deg);
+       transform-origin: 100% 0;
+}
+.path-rotation:before {
+     content: '';
+     display: block;
+     width: 30px;
+     height: 34px;
+     margin: 0 4px 0 0;
+     background: #8b8b8b;
+ }
+
+
+@keyframes rotate-out {
+    0% {
+        transform: rotate(0deg);
+    }
+    40% {
+        transform: rotate(180deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes rotate-in {
+    0% {
+        transform: rotate(360deg);
+    }
+    40% {
+        transform: rotate(180deg);
+    }
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+
+.hamburglar.is-open .path {
+    animation: dash-in 0.6s linear normal;
+    animation-fill-mode:forwards;
+}
+.hamburglar.is-open .animate-path {
+    animation: rotate-in 0.6s linear normal;
+    animation-fill-mode:forwards;
+}
+
+
+
+.hamburglar.is-closed .path {
+    animation: dash-out 0.6s linear normal;
+    animation-fill-mode:forwards;
+}
+.hamburglar.is-closed .animate-path {
+    animation: rotate-out 0.6s linear normal;
+    animation-fill-mode:forwards;
+}
+
+.path {
+    stroke-dasharray: 240;
+    stroke-dashoffset: 240;
+    stroke-linejoin: round;
+}
+
+@keyframes dash-in {
+    0% {
+        stroke-dashoffset: 240;
+    }
+    40% {
+        stroke-dashoffset: 240;
+    }
+    100% {
+        stroke-dashoffset: 0;
+    }
+}
+@keyframes dash-out {
+    0% {
+        stroke-dashoffset: 0;
+    }
+    40% {
+        stroke-dashoffset: 240;
+    }
+    100% {
+        stroke-dashoffset: 240;
+    }
+}
+
+.burger-icon {
+   position: absolute;
+   padding: 20px 16px;
+   height: 68px;
+   width: 68px;
+}
+
+.burger-container {
+    position: relative;
+    height: 28px;
+    width: 36px;
+}
+
+.burger-bun-top,
+.burger-bun-bot,
+.burger-filling {
+    position: absolute;
+    display: block;
+    height: 4px;
+    width: 36px;
+    border-radius: 2px;
+    background: #8b8b8b;
+}
+
+.burger-bun-top {
+    top: 0;
+    transform-origin: 34px 2px;
+}
+
+.burger-bun-bot {
+    bottom: 0;
+    transform-origin: 34px 2px;
+}
+
+.burger-filling {
+   top: 12px;
+}
+
+
+
+
+
+.burger-ring {
+   position: absolute;
+   top: 0;
+   left: 0;
+   width: 68px;
+   height: 68px;
+}
+
+.svg-ring {
+    width: 68px;
+    height: 68px;
+}
+
+
+.hamburglar.is-open .burger-bun-top {
+    animation: bun-top-out 0.6s linear normal;
+    animation-fill-mode:forwards;
+}
+.hamburglar.is-open .burger-bun-bot {
+    animation: bun-bot-out 0.6s linear normal;
+    animation-fill-mode:forwards;
+}
+
+.hamburglar.is-closed .burger-bun-top {
+    animation: bun-top-in 0.6s linear normal;
+    animation-fill-mode:forwards;
+}
+.hamburglar.is-closed .burger-bun-bot {
+    animation: bun-bot-in 0.6s linear normal;
+    animation-fill-mode:forwards;
+}
+
+@keyframes bun-top-out {
+    0% {
+        left: 0;
+        top: 0;
+        transform: rotate(0deg);
+    }
+    20% {
+        left: 0;
+        top: 0;
+        transform: rotate(15deg);
+    }
+    80% {
+        left: -5px;
+        top: 0;
+        transform: rotate(-60deg);
+    }
+    100% {
+        left: -5px;
+        top: 1px;
+        transform: rotate(-45deg);
+    }
+}
+
+@keyframes bun-bot-out {
+    0% {
+        left: 0;
+        transform: rotate(0deg);
+    }
+    20% {
+        left: 0;
+        transform: rotate(-15deg);
+    }
+    80% {
+        left: -5px;
+        transform: rotate(60deg);
+    }
+    100% {
+        left: -5px;
+        transform: rotate(45deg);
+    }
+}
+
+
+@keyframes bun-top-in {
+    0% {
+        left: -5px;
+        bottom: 0;
+        transform: rotate(-45deg);
+    }
+    20% {
+        left: -5px;
+        bottom: 0;
+        transform: rotate(-60deg);
+    }
+    80% {
+        left: 0;
+        bottom: 0;
+        transform: rotate(15deg);
+    }
+    100% {
+        left: 0;
+        bottom: 1px;
+        transform: rotate(0deg);
+    }
+}
+
+@keyframes bun-bot-in {
+    0% {
+        left: -5px;
+        transform: rotate(45deg);
+    }
+    20% {
+        left: -5px;
+        bottom: 0;
+        transform: rotate(60deg);
+    }
+    80% {
+        left: 0;
+        bottom: 0;
+        transform: rotate(-15deg);
+    }
+    100% {
+        left: 0;
+        transform: rotate(0deg);
+    }
+}
+
+
+.hamburglar.is-open .burger-filling {
+    animation: burger-fill-out 0.6s linear normal;
+    animation-fill-mode:forwards;
+}
+
+.hamburglar.is-closed .burger-filling {
+    animation: burger-fill-in 0.6s linear normal;
+    animation-fill-mode:forwards;
+}
+
+@keyframes burger-fill-in {
+    0% {
+        width: 0;
+        left: 36px;
+    }
+    40% {
+        width: 0;
+        left: 40px;
+    }
+    80% {
+        width: 36px;
+        left: -6px;
+    }
+    100% {
+        width: 36px;
+        left: 0;
+    }
+}
+
+@keyframes burger-fill-out {
+    0% {
+        width: 36px;
+        left: 0;
+    }
+    20% {
+        width: 42px;
+        left: -6px;
+    }
+
+    40% {
+        width: 0;
+        left: 40px;
+    }
+
+    100% {
+        width: 0;
+        left: 36px;
+    }
+}
+
+.footer {
+    background: #272727;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.footer .backToTop {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    margin: 5px 0;
+}
+
+.footer .backToTop img {
+    width: 24px;
+    height: 24px;
+    margin-bottom: 5px;
+}
+
+.footer .backToTop span {
+    text-decoration: none;
+    color: white;
+    font-size: 14px;
+}
+
+.footer .socialIcons {
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.footer .socialIcons a {
+    width: 22px;
+    height: 22px;
+    margin: 0 15px;
+}
+
+.footer .socialIcons a.instagram {
+    background: url("images/instagram-logo.png") no-repeat;
+    background-size: cover;
+
+}
+
+.footer .socialIcons a.behance {
+    background: url("images/behance.png") no-repeat;
+    background-size: cover;
+}
+
+.footer .socialIcons a.facebook {
+    background: url("images/facebook.png") no-repeat;
+    background-size: cover;
+}
+.contacts {
+    margin-top: 10px;
+}
+
+.contacts a {
+    font-size: 14px;
+    margin: 0 10px;
+    color: white;
+    text-decoration: none;
+}
+
+.copyRight {
+    margin: 30px 0;
+    font-size: 12px;
+    color: white;
+}
+
+.worksTitle {
+    display: inline-block;
+    padding: 30px 30px 0 30px;
+    font-size: 34px;
+    font-weight: bold;
+    color: #8b8b8b;
+}
+
+.worksTitle.interiorsPage {
+    display: block;
+    background: black;
+    color: white;
+}
+
+.works {
+    padding: 30px;
+}
+
+.works.interiorsPage {
+    background: black;
+}
+
+.works > div {
+    column-count: 2;
+}
+
+.works div img{
+    width: 100%;
+}
+
+.works .workItem{
+    position: relative;
+}
+
+.works .workItem:hover > .description{
+    opacity: 1;
+}
+
+
+.workItem .description {
+    position: absolute;
+    opacity: 0;
+    background: rgba(0, 0, 0, 0.5);
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    align-items: flex-end;
+    padding: 15px 30px;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.workItem .description span {
+    font-size: 18px;
+    color: white;
+}
+
+.sliderPopUp {
+    position: fixed;
+    cursor: pointer;
+    bottom: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.9);
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.sliderPopUp.hidden {
+    display: none;
+}
+
+.sliderPopUp .closeBtn {
+    position: absolute;
+    top: 40px;
+    right: 40px;
+    width: 40px;
+    height: 40px;
+}
+
+.sliderPopUp img {
+    width: 100%;
+}
+.swiper-pagination-bullet-active {
+    background: #ffffff;
+}
+.swiper-container {
+    width: 70%;
+    max-height: 90vh;
+}
+
+@media screen and (max-width: 800px) {
+    .categoryMenu {
+        flex-direction: column;
+    }
+
+    .categoryMenu .categoryLink {
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+
+    .works > div {
+        column-count: 1;
+    }
+}
+@media screen and (max-width: 500px) {
+    .header {
+        padding: 0 10px;
+    }
+}
+
+@media screen and (max-width: 600px){
+    .header {
+        flex-direction: column;
+        justify-content: flex-start;
+    }
+    #hamburger {
+        display: block;
+    }
+    .header .menu {
+        display: none;
+    }
+    .header.isMobileOpen .menu {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .header.isMobileOpen .logo img {
+        transform: translateX(-50px);
+    }
+
+    .header .menu li {
+        margin: 10px 0;
+    }
+
+    .header.isMobileOpen {
+        height: 100vh;
+        background: black;
+    }
+}
