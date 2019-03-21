@@ -61,11 +61,6 @@ document.addEventListener("DOMContentLoaded", function() {
     direction: 'horizontal',
     loop: true,
     autoHeight: true,
-    // If we need pagination
-    pagination: {
-      el: '.swiper-pagination',
-      clickable: true,
-    },
 
     // Navigation arrows
     navigation: {
@@ -82,7 +77,11 @@ document.addEventListener("DOMContentLoaded", function() {
   });
 
   swiperContainer.addEventListener('click', function (e) {
-    e.stopPropagation();
+    const { target } = e;
+    console.log(target);
+    if(target.tagName === 'IMG' || target.classList.contains("swiper-button-white")) {
+      e.stopPropagation();
+    }
   });
 
   document.addEventListener("click", function(e) {
