@@ -3,8 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>feb9visual | matte painting</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/css/swiper.min.css">
+    <title>feb9visual</title>
     <link rel="stylesheet" type="text/css" href="style.css">
 
 </head>
@@ -45,51 +44,50 @@
 
         </div>
     </div>
-    <ul  class="menu mattePage">
+    <ul  class="menu">
         <li>
             <a href="index.html">Home</a>
         </li>
         <li>
-            <a href="#">Services</a>
+            <a href="services.html" class="active">Services</a>
         </li>
         <li>
             <a href="#">About&Contact</a>
         </li>
     </ul>
 </div>
-<div class="enterBlock mattePage">
-    <a href="#" class="descriptionLink" data-scroll="works"></a>
+<div class="enterBlock">
+    <a href="#" class="descriptionLink" data-scroll="description"></a>
 </div>
-<span class="worksTitle">
-        Matte Painting
-    </span>
-<div class="works" id="works">
-    <div>
-        <div
-                class="workItem"
-                data-category="matte"
-                data-number="1"
-                data-quantity="1"
-        >
-            <img src="images/matte/preview/1.jpg" alt="Picture Boat In The Fog">
-            <div class="description">
-                <span>Picture Boat In The Fog</span>
-            </div>
-        </div>
-        <div
-                class="workItem"
-                data-category="matte"
-                data-number="2"
-                data-quantity="1"
-        >
-            <img src="images/matte/preview/2.jpg" alt="Picture House Near The River">
-            <div class="description">
-                <span>Picture House Near The River</span>
-            </div>
-        </div>
-    </div>
+<div class="blackContainer" id="description">
+    <span class="title">Visualize and create new opportunities.</span>
+    <div class="divider"></div>
+    <div class="divider"></div>
+    <span class="description">
+            Starting from the small, we collect all the desires and ideas of the customer, embodying them in a beautiful picture.
+        </span>
 </div>
+<div class="categoryMenu">
+    <a class="categoryLink" href="architecture.html">
+        <img src="images/categoryArchitecture.jpg" alt="">
+        <div class="description">
+            <span>Architecture</span>
+        </div>
+    </a>
+    <a class="categoryLink" href="interior.html">
+        <img src="images/categoryInteriors.jpg" alt="">
+        <div class="description">
+            <span>Interiors</span>
+        </div>
 
+    </a>
+    <a class="categoryLink" href="matte.html">
+        <img src="images/categoryMatte.jpg" alt="">
+        <div class="description">
+            <span>Matte painting</span>
+        </div>
+    </a>
+</div>
 <div class="footer">
     <a href="#" class="backToTop" data-scroll="header">
         <img src="images/up-arrow.png" alt="" data-scroll="header">
@@ -108,22 +106,6 @@
         2019 feb9visual
     </div>
 </div>
-<div class="sliderPopUp hidden" id="sliderPopUp">
-    <div class="swiper-container" id="swiperContainer">
-        <!-- Additional required wrapper -->
-        <div class="swiper-wrapper">
-            <!-- Slides -->
-        </div>
-        <!-- If we need navigation buttons -->
-        <div class="swiper-button-prev swiper-button-white"></div>
-        <div class="swiper-button-next swiper-button-white"></div>
-    </div>
-    <div class="closeBtn">
-        <img src="images/close-button.png" alt="">
-    </div>
-</div>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/js/swiper.min.js"></script>
 <script src="script.js" type="text/javascript"></script>
-<script src="swiper.js" type="text/javascript"></script>
 </body>
 </html>

@@ -806,4 +806,10 @@ body {
         height: 100vh;
         background: black;
     }
+    .categoryMenu .categoryLink > .description{
+        opacity: 1;
+    }
+    .works .workItem > .description{
+        opacity: 1;
+    }
 }
