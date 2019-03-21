@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Nunito+Sans:400,700');
-@import url('https://fonts.googleapis.com/css?family=Alegreya+Sans:400i&subset=cyrillic');
-/*font-family: 'Alegreya Sans', sans-serif;*/
+@import url('https://fonts.googleapis.com/css?family=Noto+Serif+TC&subset=cyrillic');
+
 /* http://meyerweb.com/eric/tools/css/reset/
    v2.0 | 20110126
    License: none (public domain)
@@ -648,8 +648,14 @@ body {
     text-decoration: none;
 }
 
+.UNP {
+    margin: 30px 0 10px 0;
+    font-size: 12px;
+    color: white;
+}
+
 .copyRight {
-    margin: 30px 0;
+    margin: 0 0 30px 0;
     font-size: 12px;
     color: white;
 }
@@ -781,12 +787,12 @@ body {
 
 .servicesContent .contentItem span {
     color: white;
-    font-family: 'Alegreya Sans', sans-serif;
-    font-size: 30px;
+    font-family: 'Noto Serif TC', serif;
+    font-size: 26px;
 }
 
 .servicesContent .contentItem span.architectureText {
-    line-height: 37px;
+    line-height: 39px;
 }
 
 .servicesContent .contentItem span.interiorsText {
@@ -798,19 +804,142 @@ body {
     margin-bottom: 30px;
 }
 
+.aboutPage {
+    padding-top: 300px;
+    background-color: #272727;
+    background-image: url("images/contactsBackgroud.jpg");
+    background-repeat: no-repeat;
+    background-size: auto 700px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+
+.aboutPage .companyName {
+    font-size: 40px;
+    color: white;
+    text-align: center;
+}
+
+.aboutPage .contactUs {
+    font-size: 30px;
+    color: white;
+}
+
+.aboutPage .divider {
+    margin: 20px 0 20px 0;
+    width: 150px;
+    height: 2px;
+    background: white;
+}
+
+.contactsAndForm {
+    height: 600px;
+    width: 90%;
+    max-width: 1100px;
+    margin: 70px 0 30px 0;
+    display: flex;
+}
+
+.contactsAndForm .companyContacts {
+    width: 40%;
+    background-color: white;
+    background-image: url("images/blackLogo.png");
+    background-size: 70px;
+    background-repeat: no-repeat;
+    background-position: 20px 20px;
+    padding: 150px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.contactsAndForm .companyForm {
+    width: 60%;
+    background: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.companyForm form {
+    font-family: 'Nunito Sans', sans-serif;
+    width: 70%;
+    height: 70%;
+    border: 1px solid white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px 0;
+}
+
+.companyForm input, .companyForm textarea {
+    font-family: 'Nunito Sans', sans-serif;
+    width: 70%;
+    height: 30px;
+    background: none;
+    color: white;
+    border: 0;
+    border-bottom: 1px solid white;
+    margin-bottom: 30px;
+    outline: none;
+    font-size: 17px;
+}
+
+.companyForm textarea {
+    resize: none;
+    height: 110px;
+}
+
+.companyForm button {
+    font-family: 'Nunito Sans', sans-serif;
+    width: 100px;
+    height: 40px;
+    background: black;
+    color: white;
+    border: 1px solid white;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.companyContacts .contact {
+    font-size: 24px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.companyContacts .contact a {
+    margin-top: 5px;
+    display: block;
+    text-decoration: none;
+    color: black;
+}
+.companyContacts .contact a:hover {
+    color: #676767;
+}
+
+@media screen and (min-width: 1600px) {
+    .aboutPage {
+        background-size: 100% 700px;
+    }
+}
+
 @media screen and (max-width: 1300px) {
     .servicesContent .contentItem {
         width: 1000px;
     }
     .servicesContent .contentItem span {
-        font-size: 24px;
+        font-size: 22px;
     }
     .servicesContent .contentItem span.architectureText {
-        line-height: 29px;
+        line-height: 27px;
     }
 
     .servicesContent .contentItem span.interiorsText {
-        line-height: 25px;
+        line-height: 23px;
     }
 }
 
@@ -819,14 +948,14 @@ body {
         width: 780px;
     }
     .servicesContent .contentItem span {
-        font-size: 18px;
+        font-size: 17px;
     }
     .servicesContent .contentItem span.architectureText {
-        line-height: 23px;
+        line-height: 21px;
     }
 
     .servicesContent .contentItem span.interiorsText {
-        line-height: 19px;
+        line-height: 18px;
     }
 }
 
@@ -870,6 +999,22 @@ body {
 
     .servicesContent .contentItem span.interiorsText {
         line-height: 18px;
+    }
+
+    .contactsAndForm {
+        height: auto;
+        width: 90%;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .contactsAndForm .companyContacts {
+        width: 100%;
+    }
+
+    .contactsAndForm .companyForm {
+        width: 100%;
+        padding: 40px;
     }
 }
 
@@ -916,5 +1061,13 @@ body {
 @media screen and (max-width: 500px) {
     .header {
         padding: 0 10px;
+    }
+
+    .companyForm form {
+        width: 95%;
+    }
+
+    .contactsAndForm .companyForm {
+        padding: 10px;
     }
 }
