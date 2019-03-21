@@ -1,5 +1,5 @@
-@import url('https://fonts.googleapis.com/css?family=Nunito+Sans:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i');
-@import url('https://fonts.googleapis.com/css?family=Alegreya+Sans:100,100i,300,300i,400,400i,500,500i,700,700i,800,800i,900,900i&subset=cyrillic');
+@import url('https://fonts.googleapis.com/css?family=Nunito+Sans:400,700');
+@import url('https://fonts.googleapis.com/css?family=Alegreya+Sans:400i&subset=cyrillic');
 /*font-family: 'Alegreya Sans', sans-serif;*/
 /* http://meyerweb.com/eric/tools/css/reset/
    v2.0 | 20110126
@@ -90,7 +90,7 @@ body {
     height: 100%;
 }
 
-.header.scrolled .logo img, .header.interiorsPage .logo img {
+.header.scrolled .logo img, .header.interiorsPage .logo img, .header.servicesPage .logo img {
     transform: translateX(-50px);
 }
 
@@ -757,6 +757,79 @@ body {
     justify-content: center;
     align-items: center;
 }
+
+.servicesContent {
+    padding-top: 100px;
+    background: black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.servicesContent .contentItem {
+    width: 1280px;
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 30px;
+
+}
+
+.servicesContent .contentItem img {
+    width: 62%;
+    margin-right: 20px;
+}
+
+.servicesContent .contentItem span {
+    color: white;
+    font-family: 'Alegreya Sans', sans-serif;
+    font-size: 30px;
+}
+
+.servicesContent .contentItem span.architectureText {
+    line-height: 37px;
+}
+
+.servicesContent .contentItem span.interiorsText {
+    line-height: 36px;
+}
+
+.picture360 {
+    width: 65%;
+    margin-bottom: 30px;
+}
+
+@media screen and (max-width: 1300px) {
+    .servicesContent .contentItem {
+        width: 1000px;
+    }
+    .servicesContent .contentItem span {
+        font-size: 24px;
+    }
+    .servicesContent .contentItem span.architectureText {
+        line-height: 29px;
+    }
+
+    .servicesContent .contentItem span.interiorsText {
+        line-height: 25px;
+    }
+}
+
+@media screen and (max-width: 1030px) {
+    .servicesContent .contentItem {
+        width: 780px;
+    }
+    .servicesContent .contentItem span {
+        font-size: 18px;
+    }
+    .servicesContent .contentItem span.architectureText {
+        line-height: 23px;
+    }
+
+    .servicesContent .contentItem span.interiorsText {
+        line-height: 19px;
+    }
+}
+
 @media screen and (max-width: 800px) {
     .categoryMenu {
         flex-direction: column;
@@ -770,10 +843,33 @@ body {
     .works > div {
         column-count: 1;
     }
-}
-@media screen and (max-width: 500px) {
-    .header {
-        padding: 0 10px;
+
+    .servicesContent .contentItem {
+        width: 100%;
+        flex-direction: column;
+        margin-bottom: 50px;
+        align-items: center;
+
+    }
+
+    .servicesContent .contentItem img {
+        width: 80%;
+        margin-right: 0;
+    }
+
+    .servicesContent .contentItem span {
+        font-size: 16px;
+        display: inline-block;
+        width: 80%;
+        text-align: justify;
+    }
+
+    .servicesContent .contentItem span.architectureText {
+        line-height: 18px;
+    }
+
+    .servicesContent .contentItem span.interiorsText {
+        line-height: 18px;
     }
 }
 
@@ -811,5 +907,14 @@ body {
     }
     .works .workItem > .description{
         opacity: 1;
+    }
+    .picture360 {
+        width: 90%;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .header {
+        padding: 0 10px;
     }
 }
