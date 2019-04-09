@@ -73,13 +73,24 @@ body {
 .header.scrolled {
     background: rgba(0, 0, 0, 0.6) ;
 }
-
+.header .logoLink {
+    display: flex;
+    align-items: flex-end;
+    cursor: pointer;
+    text-decoration: none;
+}
+.header .logoText {
+    padding: 0 0 10px 20px;
+    font-size: 30px;
+    color: black;
+}
 .header .logo {
     padding: 10px 0;
     width: 50px;
     height: 95px;
     overflow: hidden;
 }
+
 .header .mobileHeader {
     display: flex;
     width: 100%;
@@ -92,6 +103,10 @@ body {
 
 .header.scrolled .logo img, .header.interiorsPage .logo img, .header.servicesPage .logo img {
     transform: translateX(-50px);
+}
+
+.header.scrolled .logoText, .header.interiorsPage .logoText, .header.servicesPage .logoText {
+    color: white;
 }
 
 .header .menu {
@@ -960,6 +975,10 @@ body {
 }
 
 @media screen and (max-width: 800px) {
+    .header .logoText {
+        font-size: 26px;
+    }
+
     .categoryMenu {
         flex-direction: column;
     }
